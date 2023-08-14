@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des étudiants{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Num_matiere</th>
+                <th>Design</th>
+                <th>Coef</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere in matieres %}
+            <tr>
+                <td>{{ matiere.id }}</td>
+                <td>{{ matiere.numMatiere }}</td>
+                <td>{{ matiere.design }}</td>
+                <td>{{ matiere.coef }}</td>
+                <td>
+                    <a href="{{ path('app_matiere_show', {'id': matiere.id}) }}">show</a>
+                    <a href="{{ path('app_matiere_edit', {'id': matiere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_matiere_new') }}">Create new</a>
+{% endblock %}

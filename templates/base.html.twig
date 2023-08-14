@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ path('app_etudiant_index') }}">Liste des étudiants</a></li>
+                <li><a href="{{ path('app_matiere_index') }}">Liste des matières</a></li>
+                <li><a href="{{ path('app_note_index') }}">Liste des notes</a></li>
+            </ul>
+        </nav>
+        {% block body %}{% endblock %}
+    </body>
+</html>

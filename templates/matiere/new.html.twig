@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Matiere</title>
+
+{% block body %}
+    <h1>Create new Matiere</h1>
+
+    {{ include('matiere/_form.html.twig') }}
+
+    <a href="{{ path('app_matiere_index') }}">back to list</a>
+{% endblock %}
